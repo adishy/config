@@ -5,8 +5,8 @@ services:
     user: 1000:1000
     network_mode: 'host'
     volumes:
-      - ./config:/config
-      - ./cache:/cache
+      - /home/adishy/personal.data.adishy.com/tmp/apps/jellyfin/config:/config
+      - /home/adishy/personal.data.adishy.com/tmp/apps/jellyfin/cache:/cache
       - /home/adishy/personal.data.adishy.com/media:/data/media:ro
     # 2GB RAM Disk for SSD-safe, high-speed transcoding
     tmpfs:

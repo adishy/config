@@ -45,12 +45,6 @@ echo "Registering NVIDIA runtime with Docker..."
 sudo nvidia-ctk runtime configure --runtime=docker
 sudo systemctl restart docker
 
-# 6. DIRECTORY PERMISSIONS
-echo "Setting up local folder permissions for Jellyfin..."
-mkdir -p apps/jellyfin/config apps/jellyfin/cache
-sudo chown -R 1000:1000 apps/jellyfin/config apps/jellyfin/cache
-chmod -R 775 apps/jellyfin/config apps/jellyfin/cache
-
 echo "----------------------------------------------------------------"
 echo "SETUP COMPLETE!"
 echo "1. REBOOT NOW."
