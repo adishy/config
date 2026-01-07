@@ -47,9 +47,9 @@ sudo systemctl restart docker
 
 # 6. DIRECTORY PERMISSIONS
 echo "Setting up local folder permissions for Jellyfin..."
-mkdir -p config cache
-sudo chown -R 1000:1000 config cache
-chmod -R 775 config cache
+mkdir -p apps/jellyfin/config apps/jellyfin/cache
+sudo chown -R 1000:1000 apps/jellyfin/config apps/jellyfin/cache
+chmod -R 775 apps/jellyfin/config apps/jellyfin/cache
 
 echo "----------------------------------------------------------------"
 echo "SETUP COMPLETE!"

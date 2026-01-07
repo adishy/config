@@ -1,8 +1,11 @@
 #!/bin/bash
+set -euxo pipefail
+
+CURRENT_HOST=$1
 
 # Define filenames
-PKG_LIST="package_list.txt"
-SRC_BACKUP="sources_backup.tar.gz"
+PKG_LIST="./hosts/$CURRENT_HOST/apt/package_list.txt"
+SRC_BACKUP="./hosts/$CURRENT_HOST/apt/sources_backup.tar.gz"
 
 # Check if files exist
 if [[ ! -f "$PKG_LIST" ]]; then

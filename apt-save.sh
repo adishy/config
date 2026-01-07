@@ -1,8 +1,13 @@
 #!/bin/bash
+set -euxo pipefail
+
+CURRENT_HOST=$1
+
+mkdir -p "./hosts/$CURRENT_HOST/apt"
 
 # Define filenames
-PKG_LIST="package_list.txt"
-SRC_BACKUP="sources_backup.tar.gz"
+PKG_LIST="./hosts/$CURRENT_HOST/apt/package_list.txt"
+SRC_BACKUP="./hosts/$CURRENT_HOST/apt/sources_backup.tar.gz"
 
 echo "Step 1: Exporting manually installed packages..."
 apt-mark showmanual > "$PKG_LIST"
