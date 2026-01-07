@@ -6,5 +6,3 @@ git config --global push.default current
 
 # Automatically set up "upstream" tracking on the first push
 git config --global push.autoSetupRemote true
-
-
