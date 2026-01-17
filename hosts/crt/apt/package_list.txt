@@ -7,6 +7,7 @@ base-passwd
 bash
 bind9-dnsutils
 bsdutils
+btrfs-progs
 ca-certificates
 console-setup
 console-setup-linux
@@ -49,6 +50,7 @@ fonts-noto-ui-core
 fprintd-clients
 gcc-14
 gcc-14-base
+gdisk
 gir1.2-girepository-2.0
 gir1.2-glib-2.0
 gnupg
@@ -183,6 +185,7 @@ libheif-examples
 libhogweed6t64
 libicu74
 libidn2-0
+libimage-exiftool-perl
 libimath-3-1-29t64
 libinput-tools
 libinstpatch-1.0-2
@@ -395,6 +398,8 @@ systemd-resolved
 systemd-sysv
 systemd-timesyncd
 sysvinit-utils
+tailscale
+tailscale-archive-keyring
 tar
 thunderbird-locale-ar
 thunderbird-locale-de
@@ -417,6 +422,7 @@ thunderbird-locale-zh-hant
 thunderbird-locale-zh-tw
 timgm6mb-soundfont
 tmux
+tree
 tzdata
 ubuntu-keyring
 ubuntu-pro-client
