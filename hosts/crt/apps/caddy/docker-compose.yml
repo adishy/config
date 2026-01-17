@@ -13,13 +13,12 @@ services:
       - "80:80"
       - "443:443"
       - "443:443/udp"
-      - "8096:8096" # Local Jellyfin traffic flows through Caddy here
-      - "2283:2283" # Local Immich traffic flows through Caddy here
+      - "8096:8096" # Local native port
     volumes:
-      # Mount the Caddyfile from your specific SSD path
       - /mnt/das_fast/personal.data.adishy.com/tmp/apps/caddy/Caddyfile:/etc/caddy/Caddyfile
       - /mnt/das_fast/personal.data.adishy.com/tmp/apps/caddy/data:/data
       - /mnt/das_fast/personal.data.adishy.com/tmp/apps/caddy/config:/config
+      # IMPORTANT: Caddy uses this to talk to Tailscale
       - /var/run/tailscale/tailscaled.sock:/var/run/tailscale/tailscaled.sock
     networks:
       - crt_service_intranet
