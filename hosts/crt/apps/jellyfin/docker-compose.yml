@@ -2,8 +2,11 @@ services:
   jellyfin:
     image: jellyfin/jellyfin:latest
     container_name: jellyfin
+
     user: 1000:1000
-    network_mode: 'host'
+    networks:
+     - crt_service_intranet
+    # network_mode: 'host'
     volumes:
       - /mnt/das_fast/personal.data.adishy.com/tmp/apps/jellyfin/config:/config
       - /mnt/das_fast/personal.data.adishy.com/tmp/apps/jellyfin/cache:/cache
@@ -22,3 +25,7 @@ services:
               count: all
               capabilities: [gpu]
     restart: 'unless-stopped'
+
+networks:
+  crt_service_intranet:
+    external: true
