@@ -1,7 +1,7 @@
 
 # 6. DIRECTORY PERMISSIONS
 
-MAIN_DIR="$HOME/personal.data.adishy.com"
+MAIN_DIR="/mnt/das_fast/personal.data.adishy.com"
 APP_DATA_BASE_DIR="$MAIN_DIR/tmp/apps/jellyfin"
 CACHE_DIR="$APP_DATA_BASE_DIR/cache"
 CONFIG_DIR="$APP_DATA_BASE_DIR/config"
