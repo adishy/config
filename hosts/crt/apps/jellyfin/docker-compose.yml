@@ -6,11 +6,10 @@ services:
     user: 1000:1000
     networks:
      - crt_service_intranet
-    # network_mode: 'host'
     volumes:
-      - /mnt/das_fast/personal.data.adishy.com/tmp/apps/jellyfin/config:/config
-      - /mnt/das_fast/personal.data.adishy.com/tmp/apps/jellyfin/cache:/cache
-      - /mnt/das_storage/personal.data.adishy.com/media:/data/media:ro
+      - ${CONFIG_STORAGE_LOCATION}:/config
+      - ${CACHE_STORAGE_LOCATION}:/cache
+      - ${MEDIA_STORAGE_LOCATION}:/data/media:ro
     # 2GB RAM Disk for SSD-safe, high-speed transcoding
     tmpfs:
       - /transcode:size=2G
