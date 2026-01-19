@@ -54,7 +54,9 @@ gir1.2-glib-2.0
 gnupg
 gpgv
 grep
+gstreamer1.0-libav
 gstreamer1.0-plugins-bad
+gstreamer1.0-plugins-ugly
 gzip
 hostname
 htop
@@ -146,6 +148,7 @@ libcap2
 libcap2-bin
 libchromaprint1
 libcom-err2
+libconfig++9v5
 libcrypt1
 libcryptsetup12
 libdb5.3t64
@@ -164,6 +167,7 @@ libext2fs2t64
 libfaad2
 libfastjson4
 libfdisk1
+libffado2
 libffi8
 libfftw3-double3
 libflite1
@@ -174,6 +178,7 @@ libgcrypt20
 libgirepository-1.0-1
 libglib2.0-0t64
 libglib2.0-data
+libglibmm-2.4-1t64
 libgme0
 libgmp10
 libgnutls30t64
@@ -213,6 +218,7 @@ libmount1
 libmpcdec6
 libmpeg2encpp-2.1-0t64
 libmplex2-2.1-0t64
+libmysofa1
 libncursesw6
 libneon27t64
 libnetplan1
@@ -274,6 +280,7 @@ libsemanage-common
 libsemanage2
 libsepol2
 libserd-0-0
+libsigc++-2.0-0v5
 libslang2
 libsmartcols1
 libsndio7.0
@@ -304,6 +311,7 @@ libvo-aacenc0
 libvo-amrwbenc0
 libwildmidi2
 libwmflite-0.2-7
+libxml++2.6-2v5
 libxml2
 libxtables12
 libxxhash0
@@ -321,6 +329,8 @@ logsave
 lsb-release
 mawk
 media-types
+mkvtoolnix
+mkvtoolnix-gui
 mount
 mythes-ar
 mythes-de
@@ -341,6 +351,7 @@ netplan-generator
 netplan.io
 networkd-dispatcher
 nvidia-driver-580-open
+nvidia-firmware-580-580.119.02
 open-fprintd
 openssl
 passwd
@@ -388,6 +399,8 @@ systemd-resolved
 systemd-sysv
 systemd-timesyncd
 sysvinit-utils
+tailscale
+tailscale-archive-keyring
 tar
 thunderbird-locale-ar
 thunderbird-locale-de
