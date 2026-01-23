@@ -75,6 +75,7 @@ hunspell-it
 hunspell-pt-br
 hunspell-pt-pt
 hunspell-ru
+hw-probe
 hyphen-de
 hyphen-en-ca
 hyphen-en-gb
@@ -379,9 +380,11 @@ python3-yaml
 python3.12
 python3.12-minimal
 python3.12-venv
+rasdaemon
 readline-common
 rsync
 rsyslog
+s-tui
 sed
 sensible-utils
 shared-mime-info

@@ -2,7 +2,7 @@
 
 # --- CONFIGURATION ---
 FAST_POOL_DEVS=("sda" "sdb" "sdc")
-STORAGE_POOL_DEVS=("sdd" "sde")
+STORAGE_POOL_DEVS=("sdd" "sde" "sdf" "sdg")
 MOUNT_FAST="/mnt/das_fast"
 MOUNT_STORAGE="/mnt/das_storage"
 
