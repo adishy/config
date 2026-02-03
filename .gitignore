@@ -1,1 +1,2 @@
-hosts/crt/rclone.conf
+hosts/crt/das/rclone.conf
+hosts/crt/apps/immich/.env
