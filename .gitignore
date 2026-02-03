@@ -1,2 +1,1 @@
-hosts/crt/apps/jellyfin/config
-hosts/crt/apps/jellyfin/cache
+hosts/crt/rclone.conf
