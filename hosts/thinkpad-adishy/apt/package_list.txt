@@ -39,6 +39,8 @@ dosfstools
 dpkg
 e2fsprogs
 eject
+ffmpeg
+filebot
 findutils
 fonts-arphic-ukai
 fonts-arphic-uming
@@ -143,6 +145,7 @@ libbsd0
 libbz2-1.0
 libc-bin
 libc6
+libc6:i386
 libcap-ng0
 libcap2
 libcap2-bin
@@ -160,6 +163,8 @@ libdevmapper1.02.1
 libdirectfb-1.7-7t64
 libdvdnav4
 libdvdread8t64
+libegl1
+libegl1:i386
 libelf1t64
 libestr0
 libexpat1
@@ -173,9 +178,15 @@ libfftw3-double3
 libflite1
 libfluidsynth3
 libfribidi0
+libgbm1
+libgbm1:i386
 libgcc-s1
 libgcrypt20
 libgirepository-1.0-1
+libgl1
+libgl1-mesa-dri
+libgl1-mesa-dri:i386
+libgl1:i386
 libglib2.0-0t64
 libglib2.0-data
 libglibmm-2.4-1t64
@@ -387,6 +398,8 @@ sed
 sensible-utils
 shared-mime-info
 software-properties-common
+steam-launcher
+steam-libs-amd64
 sudo
 system76-acpi-dkms
 system76-dkms

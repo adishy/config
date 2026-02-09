@@ -7,4 +7,4 @@ git config --global push.default current
 # Automatically set up "upstream" tracking on the first push
 git config --global push.autoSetupRemote true
 
-tailscale && sudo tailscale set --operator=$USER
+sudo tailscale set --operator=$USER
