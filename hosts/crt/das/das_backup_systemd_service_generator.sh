@@ -4,16 +4,19 @@
 REAL_SCRIPT="/home/adishy/personal.data.adishy.com/config/hosts/crt/das/backup_das.sh"
 RCLONE_CONF="/home/adishy/personal.data.adishy.com/config/hosts/crt/das/rclone.conf"
 
-# List your drives here: "LocalPath:RemoteName:"
+# Updated DRIVES: "LocalPath:RemoteName:BucketName"
+# This fixes the "can't purge from root" error by being explicit.
 DRIVES=(
-    "/mnt/das_fast:das_fast_backup_bucket:"
-    "/mnt/das_storage:das_storage_backup_bucket:"
+    "/mnt/das_fast:das_fast_backup_bucket:das-fast"
+    "/mnt/das_storage:das_storage_backup_bucket:das-storage"
 )
 
 for ENTRY in "${DRIVES[@]}"; do
-    SRC="${ENTRY%%:*}"
-    DEST="${ENTRY#*:}"
-    
+    SRC=$(echo "$ENTRY" | cut -d: -f1)
+    REMOTE=$(echo "$ENTRY" | cut -d: -f2)
+    BUCKET=$(echo "$ENTRY" | cut -d: -f3)
+    DEST="${REMOTE}:${BUCKET}"
+
     # Generate a unique name for systemd
     SAFE_NAME=$(echo "${SRC#/}" | tr '/' '-')
     UNIT_NAME="b2-sync-${SAFE_NAME}"
@@ -29,14 +32,16 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
+# Ensure the user running this has access to the home directory config
+# Or run as your specific user instead of root:
+# User=adishy
 ExecStart=$REAL_SCRIPT $SRC $DEST
-# Hard kill after 6 hours as a fail-safe
-RuntimeMaxSec=21600
-# Run cleanup even if the service is killed
-ExecStopPost=/usr/bin/rclone cleanup $DEST --config $RCLONE_CONF
+# Cleanup is specific to B2 and doesn't always apply to all remotes, 
+# prefixing with '-' ignores errors so it doesn't mark the service as 'failed'
+ExecStopPost=-/usr/bin/rclone cleanup $DEST --config $RCLONE_CONF
 EOF
 
-    # Create Timer File (Starts at 1:00 AM)
+    # Create Timer File
     sudo tee /etc/systemd/system/${UNIT_NAME}.timer > /dev/null <<EOF
 [Unit]
 Description=Run B2 Sync for $SRC nightly at 1AM
@@ -54,4 +59,4 @@ EOF
     sudo systemctl enable --now ${UNIT_NAME}.timer
 done
 
-echo "Setup complete. Use 'systemctl list-timers' to check status."
+echo "Setup complete. Run 'sudo chmod +x $REAL_SCRIPT' to fix potential EXEC errors."
